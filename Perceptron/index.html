@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Red Neuronal</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="assets/css/ready.css">
+	<link rel="stylesheet" href="assets/css/demo.css">
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
+	<style>
+
+		.dataTables_filter {
+			display: none!important;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<div class="logo-header">
+				<a href="index.html" class="logo">
+					Red Neuronal
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+			</div>
+			<nav class="navbar navbar-header navbar-expand-lg">
+				<div class="container-fluid">
+					
+
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item dropdown">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/logo.jpg" alt="user-img" width="36" class="img-circle"><span >Carlos Castilla</span></span> </a>
+
+
+								<!-- /.dropdown-user -->
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+			<div class="sidebar">
+				<div class="scrollbar-inner sidebar-wrapper">
+					<ul class="nav">
+						<li class="nav-item active">
+							<a href="index.html">
+								<i class="la la-dashboard"></i>
+								<p>Panel</p>
+								<span class="badge badge-count">5</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-panel">
+				<div class="content">
+					<div class="container-fluid">
+						<h4 class="page-title">Entrenamiento y Simulación</h4>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card card-stats">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-md-12 d-flex align-items-center">
+												<div class="numbers">
+													<div class="form-row">
+														<div class="form-group col-md-12">
+															<label for="fileControl">Cargar Archivo</label>
+															<input type="file" class="form-control" id="fileControl" placeholder="Enter Email">
+															<small id="fileControlHelp" class="form-text text-muted">Seleccionar archivo</small>
+														</div>
+
+														<div class="form-group col-md-4" id="btnCargar"  style="display: none">
+															<br>
+															<button type="button" class="btn btn-info" onclick="loadeData()" id="loaderData" style="position: relative; top: 10px;">Cargar datos guardados</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row" id="step1" style="display: none">
+							<div class="col-md-5">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">Datos Archivo</h4>
+									</div>
+									<div class="card-body">
+										<table class="table table-striped mt-3" id="tableData">
+											<thead>
+											</thead>
+											<tbody>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-md-7" id="step2" style="display: none">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">Configuración de la red</h4>
+									</div>
+									<div class="card-body">
+										<form id="formConfig">
+											<div class="form-row">
+												<div class="form-group col-md-5">
+													<label for="numeroPatrones">Número de Patrones</label>
+													<input type="number" class="form-control" id="numeroPatrones" placeholder="0" disabled="disabled">
+												</div>
+												<div class="form-group col-md-5">
+													<label for="numeroPatrones">Rata de Aprendizaje</label>
+													<input type="number" class="form-control" id="rataAprendizaje" placeholder="0.1" required="required" min="0" step="0.01">
+												</div>
+
+												<br>
+												<div class="form-group col-md-5">
+													<label for="numeroPatrones">Número de Entradas</label>
+													<input type="number" class="form-control" id="numeroEntrada" placeholder="0" disabled="disabled">
+												</div>
+												<div class="form-group col-md-5">
+													<label for="NumeroInteraciones">Número de Interasación</label>
+													<input type="number" class="form-control" id="numeroInteraciones" placeholder="100" required="required" min="0" step="0.01">
+												</div>
+												<br>
+
+												<div class="form-group col-md-5">
+													<label for="numeroSalida">Número de Salidas</label>
+													<input type="number" class="form-control" id="numeroSalida" placeholder="0" disabled="disabled">
+												</div>
+												<div class="form-group col-md-5">
+													<label for="errorMaestro">Error Maestro</label>
+													<input type="number" class="form-control" id="errorMaestro" placeholder="0" required="required" min="0" step="0.01">
+												</div>
+											</div>
+											<br>
+											<button type="submit" class="btn btn-success">Entrenar</button>
+											<button type="button" onclick="inicializarPesosUmbrales()" class="btn btn-primary">Inicializar pesos y umbrales</button>
+											<button type="button" onclick="saveData()" class="btn btn-info">Almacenar Datos</button>
+											<button type="button" onclick="stopRender()" class="btn btn-dark">Cancelar Entrenamiento</button>
+											<br><br><br>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+
+
+							<div class="col-md-6 step3" style="display: none">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">Grafica de Error vs iteración</h4>
+									</div>
+									<div class="card-body">
+										<canvas id="chartErrorVsInteracion" class="chart chart-pie"></canvas>
+
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-md-6 step3" style="display: none">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">Resultados</h4>
+									</div>
+									<div class="card-body">
+										<div class="form-row">
+											<div class="form-group col-md-6 text-dark">
+												<h6 id="numeroIteracion">Número de Iteración: </h6>
+											</div>
+											<div class="form-group col-md-12">
+												<label for="errorIteracion">Error Iteración</label>
+												<table class="table table-striped mt-3" id="errorIteracion">
+													<thead>
+													<tr>
+														<th>#</th>
+														<th>Valor</th>
+													</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-md-3 step3" style="display: none">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">Pesos</h4>
+									</div>
+									<div class="card-body">
+										<table class="table table-striped mt-3" id="tablaPeso">
+											<thead>
+											<tr>
+												<th>#</th>
+												<th>Valor</th>
+											</tr>
+											</thead>
+											<tbody>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 step3" style="display: none">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">Umbrales</h4>
+									</div>
+									<div class="card-body">
+										<table class="table table-striped mt-3" id="tablaUmbral">
+											<thead>
+											<tr>
+												<th>#</th>
+												<th>Valor</th>
+											</tr>
+											</thead>
+											<tbody>
+											</tbody>
+										</table>
+										<br>
+										<br>
+									</div>
+								</div>
+							</div>
+
+
+
+
+							<div class="col-md-6 step3" style="display: none">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">Datos Simulación</h4>
+									</div>
+									<div class="card-body">
+
+										<form id="formSimulacion">
+											<div class="form-row">
+												<div class="form-group col-md-6">
+													<label for="numeroPatrones">X1</label>
+													<input type="number" class="form-control" id="x1" placeholder="0.0" required="required" step="0.01">
+												</div>
+												<div class="form-group col-md-6">
+													<label for="numeroPatrones">X2</label>
+													<input type="number" class="form-control" id="x2" placeholder="0.1" required="required" step="0.01">
+												</div>
+											</div>
+											<button type="submit" class="btn btn-success">Simulación</button>
+										</form>
+										<br>
+										<table class="table table-striped mt-3" id="tablaSimulacion">
+											<thead>
+											</thead>
+											<tbody>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+
+</body>
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/plugin/chartist/chartist.min.js"></script>
+<script src="assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="assets/js/ready.min.js"></script>
+<script src="assets/js/demo.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+<script src="http://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="assets/chart.js"></script>
+<script src="Neurona.js"></script>
+<script src="PerceptonUniCapa.js"></script>
+<script src="index.js"></script>
+<script>
+
+	window.chartColors = {
+		red: 'rgb(253,0,55)',
+		orange: 'rgb(255, 159, 64)',
+		yellow: 'rgb(255, 205, 86)',
+		green: 'rgb(75, 192, 192)',
+		blue: 'rgb(54, 162, 235)',
+		purple: 'rgb(153, 102, 255)',
+		grey: 'rgb(201, 203, 207)'
+	};
+
+
+	var ctx = document.getElementById('chartErrorVsInteracion');
+	var myChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: [],
+
+			datasets: [
+				{
+					label: 'Error',
+					data: [],
+					//backgroundColor: window.chartColors.red,
+					borderColor: window.chartColors.red,
+				},
+				{
+					label: 'Iteración',
+					data: [],
+					//backgroundColor: window.chartColors.red,
+					borderColor: window.chartColors.blue,
+				}
+			]
+		},
+		options: {
+			responsive: true,
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			},
+			title: {
+				display: true,
+				text: 'Error Vs Iteración'
+			},
+		}
+	});
+
+
+
+
+
+</script>
+
+</html>
