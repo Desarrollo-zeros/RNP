@@ -130,8 +130,8 @@
 													<input type="number" class="form-control" id="numeroEntrada" placeholder="0" disabled="disabled">
 												</div>
 												<div class="form-group col-md-5">
-													<label for="NumeroInteraciones">Número de Interasación</label>
-													<input type="number" class="form-control" id="numeroInteraciones" placeholder="100" required="required" min="0" step="0.01">
+													<label for="NumeroIteraciones">Número de Interasación</label>
+													<input type="number" class="form-control" id="numeroIteraciones" placeholder="100" required="required" min="0" step="0.01">
 												</div>
 												<br>
 
@@ -164,7 +164,7 @@
 										<h4 class="card-title">Grafica de Error vs iteración</h4>
 									</div>
 									<div class="card-body">
-										<canvas id="chartErrorVsInteracion" class="chart chart-pie"></canvas>
+										<canvas id="chartErrorVsIteracion" class="chart chart-pie"></canvas>
 
 									</div>
 								</div>
@@ -321,7 +321,7 @@
 	};
 
 
-	var ctx = document.getElementById('chartErrorVsInteracion');
+	var ctx = document.getElementById('chartErrorVsIteracion');
 	var myChart = new Chart(ctx, {
 		type: 'line',
 		data: {

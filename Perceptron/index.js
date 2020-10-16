@@ -25,7 +25,7 @@ function loadeData(){
     $("#numeroPatrones").val(neuronas.patrones);
 
     $("#rataAprendizaje").val(neuronas.rataAprendizaje);
-    $("#numeroInteraciones").val(neuronas.numeroIteracion);
+    $("#numeroIteraciones").val(neuronas.numeroIteracion);
     $("#errorMaestro").val(neuronas.errorMaestro);
 
 
@@ -195,7 +195,7 @@ function cargarNeurona(body){
 
 $("#formConfig").on("submit",function (evt){
     evt.preventDefault();
-    neuronas.numeroIteracion = parseInt($("#numeroInteraciones").val());
+    neuronas.numeroIteracion = parseInt($("#numeroIteraciones").val());
     neuronas.errorMaestro = parseFloat($("#errorMaestro").val());
     neuronas.rataAprendizaje = parseFloat($("#rataAprendizaje").val());
     $("#numeroEntrada").val(neuronas.entradas);
