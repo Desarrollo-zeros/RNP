@@ -137,7 +137,7 @@ class PerceptonUniCapa{
             for(let j =0; j<m;j++){
                 soma[i] = soma[i] + entradas[j] * neurona.pesos[j][i];
             }
-            soma[i] = soma[i] + neurona.umbrales[i];
+            soma[i] = soma[i] - neurona.umbrales[i];
             y[i] = this.activacionBipolar(soma[i]).toString();
         }
         return y;

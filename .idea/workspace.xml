@@ -19,17 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6719c232-bd7b-4392-839d-fc285d2b5662" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manual de usuario.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Manual de usuario.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manual de usuario.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Manual de usuario.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Perceptron/Neurona.js" beforeDir="false" afterPath="$PROJECT_DIR$/Perceptron/Neurona.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Perceptron/PerceptonUniCapa.js" beforeDir="false" afterPath="$PROJECT_DIR$/Perceptron/PerceptonUniCapa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Perceptron/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Perceptron/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Perceptron/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Perceptron/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entrenamiento.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$trenamiento.docx" beforeDir="false" />
-    </list>
+    <list default="true" id="6719c232-bd7b-4392-839d-fc285d2b5662" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +39,6 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -68,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602810464497</updated>
-      <workItem from="1602810471391" duration="8655000" />
+      <workItem from="1602810471391" duration="9262000" />
     </task>
     <servers />
   </component>
