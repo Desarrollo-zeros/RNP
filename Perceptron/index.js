@@ -193,8 +193,18 @@ function cargarNeurona(body){
 }
 
 
+
 $("#formConfig").on("submit",function (evt){
     evt.preventDefault();
+
+
+   setTimeout(function (){
+       $('html, body').animate({
+           scrollTop: $("#chartErrorVsInteracion1").offset().top -100
+       }, 2000);
+   },1000)
+
+
     neuronas.numeroIteracion = parseInt($("#numeroInteraciones").val());
     neuronas.errorMaestro = parseFloat($("#errorMaestro").val());
     neuronas.rataAprendizaje = parseFloat($("#rataAprendizaje").val());
@@ -213,27 +223,29 @@ $("#formConfig").on("submit",function (evt){
             time: 100,
         });
 
-        percentron.entrenar(neuronas).then(x => {
-            if(x){
-                $.notify({
-                    icon: 'la la-bell',
-                    title: 'Success!',
-                    message: 'La red aprendio',
-                },{
-                    type: 'success',
-                    time: 1000,
-                });
-            }else{
-                $.notify({
-                    icon: 'la la-bell',
-                    title: 'Error!',
-                    message: 'la red no pudo ser entrenada',
-                },{
-                    type: 'danger',
-                    time: 1000,
-                });
-            }
-        });
+        setTimeout(function (){
+            percentron.entrenar(neuronas).then(x => {
+                if(x){
+                    $.notify({
+                        icon: 'la la-bell',
+                        title: 'Success!',
+                        message: 'La red aprendio',
+                    },{
+                        type: 'success',
+                        time: 1000,
+                    });
+                }else{
+                    $.notify({
+                        icon: 'la la-bell',
+                        title: 'Error!',
+                        message: 'la red no pudo ser entrenada',
+                    },{
+                        type: 'danger',
+                        time: 1000,
+                    });
+                }
+            });
+        },4000)
 
     }else{
 
