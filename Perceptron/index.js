@@ -343,7 +343,7 @@ function graficarError(listaErrores, listaIndice, listaErrorMaestro){
 
 function result(listaIndice,listaErrores){
     $("#numeroIteracion").html("Número de Iteración: "+parseInt((listaIndice.length).toString()));
-    $("#errorIteracion").val(listaErrores.length-1);
+    //$("#errorIteracion").val(listaErrores.length-1);
 
 
     let str = "";

@@ -24,7 +24,7 @@ class PerceptonUniCapa{
         let soma = new Array(n);
         let u = [];
         for(let i = 0; i<n; i++){
-            u.push(parseFloat("0.0"));
+            u.push(parseFloat($("#inicialUmbral").val()));
         }
         let w = [];
         for(let i = 0; i<m; i++){
@@ -62,7 +62,7 @@ class PerceptonUniCapa{
                     }//ciclo de salidas
 
                     //la suma del soma obtenido anteriormente se suma con el umbral que se encuentra en el indice i
-                    soma[i] += parseFloat(u[i]);
+                    soma[i] =  soma[i] -parseFloat(u[i]);
                     //y toma el valor de la activacion
                     y[i] = this.activacionBipolar(soma[i]);
 
@@ -82,7 +82,7 @@ class PerceptonUniCapa{
                         w[j][i] = parseFloat(w[j][i]) + neurona.rataAprendizaje  *  parseFloat(el[i])  * parseFloat(neurona.x[p][j]);
                     }
                     //se optiene el error del patron
-                    ep[p] = parseFloat(sumaEl) / patrones;
+                    ep[p] =  Math.abs(el[i])/ neurona.salidas;
 
                     //se optiene la suma de los resultantes
                     sumaEp += parseFloat(ep[p]);

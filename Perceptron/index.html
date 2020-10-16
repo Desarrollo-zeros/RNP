@@ -115,38 +115,57 @@
 									<div class="card-body">
 										<form id="formConfig">
 											<div class="form-row">
-												<div class="form-group col-md-5">
+
+												<div class="form-group col-md-4">
 													<label for="numeroPatrones">Número de Patrones</label>
 													<input type="number" class="form-control" id="numeroPatrones" placeholder="0" disabled="disabled">
 												</div>
-												<div class="form-group col-md-5">
+												<div class="form-group col-md-4">
 													<label for="numeroPatrones">Rata de Aprendizaje</label>
 													<input type="number" class="form-control" id="rataAprendizaje" placeholder="0.1" required="required" min="0" step="0.01">
 												</div>
 
+												<div class="form-group col-md-4">
+													<label for="inicialUmbral">Inicial Umbral</label>
+													<input type="number" class="form-control" id="inicialUmbral" placeholder="0.1" required="required" min="0" step="0.01" value="0.1">
+												</div>
+
 												<br>
-												<div class="form-group col-md-5">
+												<div class="form-group col-md-4">
 													<label for="numeroPatrones">Número de Entradas</label>
 													<input type="number" class="form-control" id="numeroEntrada" placeholder="0" disabled="disabled">
 												</div>
-												<div class="form-group col-md-5">
+
+												<div class="form-group col-md-4">
 													<label for="NumeroInteraciones">Número de iteración</label>
 													<input type="number" class="form-control" id="numeroInteraciones" placeholder="100" required="required" min="0" step="0.01">
 												</div>
+
+												<div class="form-group col-md-4">
+													<label for="pesoW0">Pesos W[A]</label>
+													<input type="number" class="form-control" id="pesoW0" placeholder="0.1" required="required" min="0" step="0.01" value="0.0">
+												</div>
+
 												<br>
 
-												<div class="form-group col-md-5">
+												<div class="form-group col-md-4">
 													<label for="numeroSalida">Número de Salidas</label>
 													<input type="number" class="form-control" id="numeroSalida" placeholder="0" disabled="disabled">
 												</div>
-												<div class="form-group col-md-5">
+												<div class="form-group col-md-4">
 													<label for="errorMaestro">Error Maestro</label>
 													<input type="number" class="form-control" id="errorMaestro" placeholder="0" required="required" min="0" step="0.01">
 												</div>
+
+												<div class="form-group col-md-4">
+													<label for="pesoW1">Pesos W[B]</label>
+													<input type="number" class="form-control" id="pesoW1" placeholder="0.1" required="required" min="0" step="0.01" value="0.0">
+												</div>
+
 											</div>
 											<br>
 											<button type="submit" class="btn btn-success">Entrenar</button>
-											<button type="button" onclick="inicializarPesosUmbrales()" class="btn btn-primary">Inicializar pesos y umbrales</button>
+											<button type="button" onclick="inicializarPesosUmbrales()" class="btn btn-primary">Inicializar</button>
 											<button type="button" onclick="saveData()" class="btn btn-info">Almacenar Datos</button>
 											<button type="button" onclick="stopRender()" class="btn btn-dark">Cancelar Entrenamiento</button>
 											<br><br><br>

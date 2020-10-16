@@ -21,7 +21,7 @@ class Neurona{
 
     //metodo para inicializar
     inicializar(){
-        return parseFloat("0.0");
+        return 0.0;
     }
 
 
@@ -47,12 +47,12 @@ class Neurona{
         let n = this.salidas;
         let m = this.entradas;
         for(let i = 0; i < n; i++){
-            this.umbrales[i] = this.inicializar();
+            this.umbrales[i] = parseFloat($("#inicialUmbral").val());
             listaUmbrales.push(this.umbrales[i]);
 
             for(let j = 0; j<m; j++){
                 this.pesos[j] = [];
-                this.pesos[j].push(this.inicializar());
+                this.pesos[j].push(parseFloat($("#pesoW"+j).val()));
                 listaPesos.push(this.pesos[j][i]);
             }
         }
